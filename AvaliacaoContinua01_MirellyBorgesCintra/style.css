@@ -1,0 +1,218 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: #a24187; 
+    color: hsl(288, 87%, 79%); 
+}
+
+.container {
+    max-width: 980px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+header {
+    margin-bottom: 16px;
+}
+
+h1 {
+    margin: 0 0 4px 0;
+    font-size: 1.8rem;
+    color: #e0abf5; 
+}
+
+.subtitle {
+    margin: 0;
+    color: #bf6add; 
+}
+
+.card {
+    background: #fff0fb; 
+    border-radius: 16px;
+    padding: 18px 20px 20px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 28px rgba(126, 87, 142, 0.4);
+}
+
+.field {
+    margin-bottom: 14px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #5a3e6e; 
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid #d8bbd3; 
+    border-radius: 10px;
+    outline: none;
+    transition: .15s;
+    background: #fff;
+    color: #4b3b4f;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: #a16caf; 
+    box-shadow: 0 0 0 3px rgba(161, 108, 175, .3);
+}
+
+/* AQUI o ajuste para cidade + telefone + UF */
+.grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.2fr 0.6fr;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+button {
+    border: none;
+    background: #b57edc; 
+    color: #fff;
+    padding: 10px 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .1s;
+}
+
+button:hover {
+    filter: brightness(.9);
+}
+
+button.secondary {
+    background: #efdbf7; 
+    color: #7e578e;
+}
+
+.erro {
+    color: #de499d;
+    font-size: .78rem;
+    min-height: 16px;
+}
+
+.is-error {
+    border-color: #de499d !important;
+}
+
+.msg-global {
+    min-height: 18px;
+    font-size: .85rem;
+    margin-top: 6px;
+}
+
+.msg-global.ok {
+    color: #4a3278; 
+}
+
+.msg-global.erro {
+    color: #de499d;
+}
+
+.lista-clientes {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-cliente {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    border: 1px solid #d8bbd3; 
+    border-radius: 12px;
+    padding: 12px 14px;
+    background: #faf0ff; 
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.item-nome {
+    font-weight: 600;
+    color: #5a3e6e;
+}
+
+.item-meta {
+    font-size: .78rem;
+    color: #9f7bbf; 
+}
+
+.item-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-sm {
+    padding: 5px 9px;
+    border-radius: 8px;
+    font-size: .75rem;
+}
+
+.btn-edit {
+    background: #d79de0; 
+    color: #4b3b4f;
+}
+
+.btn-edit:hover {
+    filter: brightness(0.85);
+}
+
+.btn-remove {
+    background: #de499d; 
+    color: #fff;
+}
+
+.btn-remove:hover {
+    filter: brightness(0.9);
+}
+
+.hint {
+    color: #b18cbf;
+    font-size: .8rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .item-cliente {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item-actions {
+        margin-top: 8px;
+    }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaliação Contínua – Cadastro de Clientes</title>
+    <link rel="stylesheet" href="../AvaliacaoContinua01_Aluno/style.css" />
+</head>
+
+<body>
+    <main class="container">
+        <header>
+            <h1>Cadastro de Clientes</h1>
+            <p class="subtitle">Preencha os dados e gerencie a lista abaixo.</p>
+        </header>
+
+        <!-- Formulário de Cadastro -->
+        <section class="card">
+            <form id="form-cliente" novalidate>
+                <div class="field">
+                    <label for="nome">Nome completo *</label>
+                    <input id="nome" name="nome" type="text" placeholder="Ex.: Ana Souza" required />
+                    <small id="erro-nome" class="erro"></small>
+                </div>
+
+                <div class="field">
+                    <label for="email">E-mail *</label>
+                    <input id="email" name="email" type="email" placeholder="Ex.: ana@email.com" required />
+                    <small id="erro-email" class="erro"></small>
+                </div>
+
+                <div class="field">
+                    <label for="cpf">CPF *</label>
+                    <input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" required />
+                    <small id="erro-cpf" class="erro"></small>
+                </div>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="telefone">Telefone</label>
+                        <input id="telefone" name="telefone" type="text" placeholder="(11) 99999-0000" />
+                        <small id="erro-telefone" class="erro"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="cidade">Cidade</label>
+                        <input id="cidade" name="cidade" type="text" placeholder="Ex.: São Paulo" />
+                        <small id="erro-cidade" class="erro"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="uf">UF *</label>
+                        <select id="uf" name="uf" required>
+                            <option value="">Selecione</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
+                        <small id="erro-uf" class="erro"></small>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button id="btn-salvar" type="submit">Cadastrar cliente</button>
+                    <button id="btn-cancelar-edicao" type="button" class="secondary" hidden>Cancelar edição</button>
+                </div>
+
+                <p id="msg-global" class="msg-global"></p>
+            </form>
+        </section>
+
+        <!-- Lista dinâmica -->
+        <section class="card">
+            <h2>Clientes cadastrados</h2>
+            <p class="hint">
+                Clique em <strong>Alterar</strong> para editar o cliente ou <strong>Remover</strong> para excluir.
+            </p>
+            <ul id="lista-clientes" class="lista-clientes">
+                <!-- Itens criados dinamicamente pelo JS -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="../AvaliacaoContinua01_Aluno/script.js" type="module"></script>
+</body>
+
+</html>
